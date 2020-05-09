@@ -1,0 +1,11 @@
+.profile__sub-image {
+    background-color: red;
+}
+
+@media screen and (max-width:768px) {
+  .profile__sub-image {
+      width: 7.5px;
+      height: 7.5px;
+      
+  }  
+} 

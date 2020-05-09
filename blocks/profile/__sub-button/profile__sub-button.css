@@ -1,0 +1,17 @@
+.profile__sub-button {
+    border: 1px solid #ffffff;
+    background-color: black;
+    max-width: 24px;
+    height: 24px;
+    margin-bottom: 18px;
+}
+
+@media screen and (max-width:768px) {
+  .profile__sub-button {
+      max-width: 18px;
+      height: 18px;
+      margin-left: 6px;
+      display: flex;
+      justify-content: center;
+  }  
+} 
