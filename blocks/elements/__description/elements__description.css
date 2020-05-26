@@ -1,0 +1,13 @@
+.elements__description {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 425px) {
+    .elements__description {
+        justify-content: space-between;
+        margin-left: 21px;
+        margin-right: 15px;
+
+    }
+}
