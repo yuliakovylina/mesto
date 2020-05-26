@@ -1,5 +1,4 @@
 .elements__description {
-    border: 3px solid black;
     display: flex;
     justify-content: space-around;
 }

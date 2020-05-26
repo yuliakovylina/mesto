@@ -6,7 +6,6 @@
 
 
 .elements {
-    border: 3px solid yellow;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 18px;

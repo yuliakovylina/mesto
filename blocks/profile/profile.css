@@ -1,15 +1,13 @@
 @import url(./__button/profile__button.css);
 @import url(./__description/profile__description.css);
-@import url(./__image/profile__image.css);
+@import url(./__avatar/profile__avatar.css);
 @import url(./__info/profile__info.css);
 @import url(./__main/profile__main.css);
-@import url(./__sub-button/profile__sub-button.css);
+@import url(./__small-button/profile__small-button.css);
 @import url(./__subtitle/profile__subtitle.css);
 @import url(./__title/profile__title.css);
-@import url(./__sub-image/profile__sub-image.css);
 
 .profile {
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;

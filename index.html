@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>Mesto</title>
+    <title>Места для путешествий</title>
 </head>
 <body class="page">
     <header class="header">
@@ -14,15 +14,13 @@
     <main class="main">
         <section class = "profile">
             <div class="profile__main">
-                <img class="profile__image" src="./images/kusto.jpg" alt="Кусто"> 
+                <img class="profile__avatar" src="./images/kusto.jpg" alt="Портрет Кусто"> 
                 <div class="profile__info">
                     <div class="profile__description">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
                         <p class="profile__subtitle">Исследователь океана</p>    
                     </div> 
-                    <button class="profile__sub-button">
-                        <img class="profile__sub-image" src="images/pen.svg">
-                    </button>           
+                    <button class="profile__small-button" type="button"></button>           
                 </div>
             </div>    
             <button class="profile__button"></button>
@@ -91,9 +89,26 @@
         </section> 
     </main>
     <footer class="footer">
-        <p class="footer__copyright">© 2020 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2020 Yulia Kovylina</p>
     </footer>
 
+    <section class="popup" id="information">
+        <div class="popup__container">
+            <button class="popup__button-close" type="button">
+                <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
+            </button>
+            <form class="form" name="form" method="post" action="#">
+                <h2 class="form__heading">Редактировать профиль</h2>
+                    <input class="form__name" type="text" name="firstname" value="Жак-Ив Кусто">
+                <br>
+                    <input class="form__profession" type="text" name="profession" value="Исследователь океана">
+                <br>
+                <button type="submit" class="form__save">Сохранить</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="./script/script.js"></script>
 
 </body>
 </html>

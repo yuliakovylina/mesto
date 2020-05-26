@@ -1,5 +1,4 @@
 .profile__info {
-    border: 1px solid pink;
     width: 336px;
     display: flex;
     align-items: center;
@@ -7,6 +6,12 @@
     margin-left: 0;
 
 }
+
+@media screen and (max-width:882px) {
+    .profile__info {
+        max-width: 250px;
+    }  
+  } 
 
 @media screen and (max-width:768px) {
     .profile__info {
