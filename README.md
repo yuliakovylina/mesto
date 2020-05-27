@@ -13,4 +13,4 @@
 При нажатии на кнопку редактирования профиля, открывается модальное окно. В нем можно ввести свои данные. При закрытии окна данные сохранятся.
 
 * [Ссылка на макет в Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
-* [Ссылка на проект]()
+* [Ссылка на проект](https://yuliakovylina.github.io/mesto/index.html)

@@ -3,7 +3,7 @@
     width: 17%;
     height: 50px;
     border: 2px solid #ffffff;
-    background-image: url('/images/plus.png');
+    background-image: url('../../../images/plus.png');
     background-repeat: no-repeat;
     background-position: center;
 }
