@@ -4,20 +4,3 @@
     font-family: 'Inter', Arial, sans-serif;
 }
 
-@media screen and (max-width: 1270px) {
-    .page {
-       
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .page {
-   
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .page {
-        
-    }
-}

@@ -1,18 +1,16 @@
-@import url(./form__input_name.css);
-@import url(./form__input_profession.css);
+@import url(/blocks/form/__input/_name/form__input_name.css);
+@import url(/blocks/form/__input/_profession/form__input_profession.css);
 
 .form__input { 
     border-style: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
-    width: 358px;
     font-size: 14px;
     line-height: 17px;
     padding-bottom: 5px;
 }
 
 @media (max-width: 503px) {
-    .form__name {
-        width: 200px;
+    .form__input {
         font-size: 12px;
         line-height: 15px;
     }
