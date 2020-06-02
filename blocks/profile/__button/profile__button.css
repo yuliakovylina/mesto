@@ -6,6 +6,16 @@
     background-image: url(../../../images/plus-button.svg);
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 2px;
+}
+
+.profile__button:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s linear;
+
 }
 
 @media screen and (max-width:768px) {
@@ -16,8 +26,8 @@
 
 
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:615px) {
   .profile__button {
-      width: 100%;
+      width: 282px;
   }  
 } 

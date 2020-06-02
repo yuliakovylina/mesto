@@ -1,12 +1,20 @@
 @import url(./__copyright/footer__copyright.css);
 
-@media screen and (max-width: 1024px) {
+.footer {
+    max-width: 882px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 915px) {
     .footer {
-        margin: 0 10% 0 10%;
+        max-width: 584px;
     }
 }
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 615px) {
     .footer {
-        margin: 0 6% 0 6%;
+        max-width: 282px;
+        margin-bottom: 36px;
     }
 }
+

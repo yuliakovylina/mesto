@@ -1,0 +1,25 @@
+@import url('./__description/card__description.css');
+@import url('./__image/card__image.css');
+@import url('./__item/card__item.css');
+@import url('./__name/card__name.css');
+@import url('./__like/card__like.css');
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:615px) {
+    .card {
+        width: 282px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+    }
+
+    .card:last-of-type {
+        margin-bottom: 0;
+    }
+}

@@ -23,90 +23,76 @@
                     <button class="profile__small-button" type="button"></button>           
                 </div>
             </div>    
-            <button class="profile__button"></button>
+            <button class="profile__button" type="button"></button>
         </section>
 
         <section class= "elements">
-            <div class="elements__card">
-                <div class="elements__item">
-                    <img class="elements__image" alt="Камчатка" src="./images/Kamchatka.jpeg">
+            <article class="card">
+                <img class="card__item card__image" alt="Камчатка" src="./images/Kamchatka.jpeg">   
+                <div class="card__description">
+                    <h2 class="card__name">Камчатка</h2>
+                    <button class="card__like" type="button"></button>
                 </div>    
-                <div class="elements__description">
-                    <h2 class="elements__name">Камчатка</h2>
-                    <img class="like" alt="" src="./images/like.svg">
-                </div>    
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <div class="elements__item">
-                    <img class="elements__image" alt="Карелия" src="./images/Karelia.jpeg">
+            <article class="card">
+                <img class="card__item card__image" alt="Карелия" src="./images/Karelia.jpeg">   
+                <div class="card__description">
+                    <h2 class="card__name">Карелия</h2>
+                    <button class="card__like"  type="button" src="./images/like.svg"></button>
                 </div>    
-                <div class="elements__description">
-                    <h2 class="elements__name">Карелия</h2>
-                    <img class="like" alt="" src="./images/like.svg">
-                </div>    
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <div class="elements__item">
-                    <img class="elements__image" alt="Остров Ольхон" src="./images/Baikal.jpeg">
+            <article class="card">
+                <img class="card__item card__image" alt="Остров Ольхон" src="./images/Baikal.jpeg">
+                <div class="card__description">
+                    <h2 class="card__name">Остров Ольхон</h2>
+                    <button class="card__like" type="button" src="./images/like.svg"></button>
                 </div>    
-                <div class="elements__description">
-                    <h2 class="elements__name">Остров Ольхон</h2>
-                    <img class="like" alt="" src="./images/like.svg">
-                </div>    
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <div class="elements__item">
-                    <img class="elements__image" alt="Ергаки" src="./images/Ergaki.jpeg">
-                </div>
-                <div class="elements__description">
-                    <h2 class="elements__name">Ергаки</h2>
-                    <img class="like" alt="" src="./images/like.svg">
+            <article class="card">
+                <img class="card__item card__image" alt="Ергаки" src="./images/Ergaki.jpeg">
+                <div class="card__description">
+                    <h2 class="card__name">Ергаки</h2>
+                    <button class="card__like" type="button" src="./images/like.svg"></button>
                 </div>    
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <div class="elements__item">
-                    <img class="elements__image" alt="Гора Эльбрус" src="./images/kirill-pershin-1404681-unsplash.jpg">
-                </div>
-                <div class="elements__description">
-                    <h2 class="elements__name">Гора Эльбрус</h2>
-                    <img class="like" alt="" src="./images/like.svg">
+            <article class="card">
+                <img class="card__item card__image" alt="Гора Эльбрус" src="./images/kirill-pershin-1404681-unsplash.jpg">
+                <div class="card__description">
+                    <h2 class="card__name">Гора Эльбрус</h2>
+                    <button class="card__like" type="button" src="./images/like.svg"></button>
                 </div>    
-            </div>
+            </article>
 
-            <div class="elements__card">
-                <div class="elements__item">
-                    <img class="elements__image" alt="Карачаевск" src="./images/kirill-pershin-1088404-unsplash.jpg">
-                </div>
-                <div class="elements__description">
-                    <h2 class="elements__name">Карачаевск</h2>
-                    <img class="like" alt="" src="./images/like.svg">
+            <article class="card">
+                <img class="card__item card__image" alt="Карачаевск" src="./images/kirill-pershin-1088404-unsplash.jpg">
+                <div class="card__description">
+                    <h2 class="card__name">Карачаевск</h2>
+                    <button class="card__like" type="button" src="./images/like.svg"></button>
                 </div>    
-            </div>
+            </article>
         </section> 
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Yulia Kovylina</p>
     </footer>
 
-    <section class="popup" id="information">
+    <article class="popup" id="information">
         <div class="popup__container">
             <button class="popup__button-close" type="button">
                 <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
             </button>
             <form class="form" name="form" method="post" action="#">
                 <h2 class="form__heading">Редактировать профиль</h2>
-                    <input class="form__name" type="text" name="firstname" value="Жак-Ив Кусто">
-                <br>
-                    <input class="form__profession" type="text" name="profession" value="Исследователь океана">
-                <br>
+                    <input class="form__input form__input_name" type="text" name="firstname">
+                    <input class="form__input form__input_profession" type="text" name="profession">
                 <button type="submit" class="form__save">Сохранить</button>
             </form>
         </div>
-    </section>
+    </article>
 
     <script src="./script/script.js"></script>
 

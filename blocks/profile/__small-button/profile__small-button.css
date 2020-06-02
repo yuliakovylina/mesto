@@ -9,6 +9,14 @@
     background-position: center;
 }
 
+.profile__small-button:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s linear;
+}
+
 @media screen and (max-width:882px) {
   .profile__small-button {
       max-width: 18px;

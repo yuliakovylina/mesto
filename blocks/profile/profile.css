@@ -8,13 +8,15 @@
 @import url(./__title/profile__title.css);
 
 .profile {
+    max-width: 882px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 51px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 915px) {
     .profile {
         margin-bottom: 36px;
         flex-direction: column;
