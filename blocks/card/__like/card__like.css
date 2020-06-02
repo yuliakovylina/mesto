@@ -4,8 +4,9 @@
     background-image: url(../../../images/like.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: #ffffff;
     border: none;
-    ;
+
 }
 
 .card__like:hover {
