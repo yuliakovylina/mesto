@@ -1,5 +1,5 @@
-@import url(/blocks/form/__input/_name/form__input_name.css);
-@import url(/blocks/form/__input/_profession/form__input_profession.css);
+@import url(_name/form__input_name.css);
+@import url(_profession/form__input_profession.css);
 
 .form__input { 
     border-style: none;
