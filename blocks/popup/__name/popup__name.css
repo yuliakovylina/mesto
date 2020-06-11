@@ -1,0 +1,9 @@
+.popup__name {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: white;
+    padding-top: 9px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+}
