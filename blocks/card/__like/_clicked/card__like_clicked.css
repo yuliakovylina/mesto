@@ -1,0 +1,4 @@
+.card__like_clicked {
+        opacity: 1;
+        background: url(../../../../images/like-clicked.svg) center no-repeat;
+      }

@@ -3,12 +3,16 @@
 @import url('./__item/card__item.css');
 @import url('./__name/card__name.css');
 @import url('./__like/card__like.css');
+@import url('./__like/_clicked/card__like_clicked.css');
+@import url('./__delete/card__delete.css');
+@import url('./__picture/card__picture.css');
 
 .card {
     background-color: #ffffff;
     border-radius: 10px;
     max-width: 282px;
     height: auto;
+    position: relative;
 }
 
 @media screen and (max-width:615px) {

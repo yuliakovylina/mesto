@@ -27,53 +27,6 @@
         </section>
 
         <section class= "elements">
-            <article class="card">
-                <img class="card__item card__image" alt="Камчатка" src="./images/Kamchatka.jpeg">   
-                <div class="card__description">
-                    <h2 class="card__name">Камчатка</h2>
-                    <button class="card__like" type="button"></button>
-                </div>    
-            </article>
-
-            <article class="card">
-                <img class="card__item card__image" alt="Карелия" src="./images/Karelia.jpeg">   
-                <div class="card__description">
-                    <h2 class="card__name">Карелия</h2>
-                    <button class="card__like"  type="button"></button>
-                </div>    
-            </article>
-
-            <article class="card">
-                <img class="card__item card__image" alt="Остров Ольхон" src="./images/Baikal.jpeg">
-                <div class="card__description">
-                    <h2 class="card__name">Остров Ольхон</h2>
-                    <button class="card__like" type="button"></button>
-                </div>    
-            </article>
-
-            <article class="card">
-                <img class="card__item card__image" alt="Ергаки" src="./images/Ergaki.jpeg">
-                <div class="card__description">
-                    <h2 class="card__name">Ергаки</h2>
-                    <button class="card__like" type="button"></button>
-                </div>    
-            </article>
-
-            <article class="card">
-                <img class="card__item card__image" alt="Гора Эльбрус" src="./images/kirill-pershin-1404681-unsplash.jpg">
-                <div class="card__description">
-                    <h2 class="card__name">Гора Эльбрус</h2>
-                    <button class="card__like" type="button"></button>
-                </div>    
-            </article>
-
-            <article class="card">
-                <img class="card__item card__image" alt="Карачаевск" src="./images/kirill-pershin-1088404-unsplash.jpg">
-                <div class="card__description">
-                    <h2 class="card__name">Карачаевск</h2>
-                    <button class="card__like" type="button"></button>
-                </div>    
-            </article>
         </section> 
     </main>
     <footer class="footer">
@@ -93,6 +46,44 @@
             </form>
         </div>
     </article>
+
+    <article class="popup popup_picture" id="card-information">
+        <div class="popup__container">
+            <button class="popup__button-close popup__button-close_pic" type="button">
+                <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
+            </button>
+            <form class="form form_pic" name="form" method="post" action="#">
+                <h2 class="form__heading">Новое место</h2>
+                    <input class="form__input form__input_place" type="text" name="placename" placeholder="Название">
+                    <input class="form__input form__input_link" type="text" name="placelink" placeholder="Ссылка на картинку">
+                <button type="submit" class="form__save">Создать</button>
+            </form>
+        </div>
+    </article>
+
+    <article class="popup popup_opacity" id="picture-large">
+        <div class="popup__enlarge">
+          <button class="popup__button-close popup__button-close_enlarge" type="button">
+            <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
+          </button>
+          <img class="popup__item" alt="" src=""/>
+          <h3 class="popup__name"></h3>
+        </div>
+    </article>
+
+    <template class="card-template">
+        <article class="card">
+            <a class="card__picture" href="#">
+              <img data-name="" class="card__item card__image" alt="" src="">   
+            </a>  
+            <button class="card__delete"></button>
+            <div class="card__description">
+                <h2 class="card__name"></h2>
+                <button class="card__like" type="button"></button>
+            </div>    
+        </article>
+    </template>
+
 
     <script src="./script/script.js"></script>
 
