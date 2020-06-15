@@ -33,7 +33,7 @@
         <p class="footer__copyright">&copy; 2020 Yulia Kovylina</p>
     </footer>
 
-    <article class="popup" id="information">
+    <div class="popup popup_profile" id="information">
         <div class="popup__container">
             <button class="popup__button-close" type="button">
                 <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
@@ -45,9 +45,9 @@
                 <button type="submit" class="form__save">Сохранить</button>
             </form>
         </div>
-    </article>
+    </div>
 
-    <article class="popup popup_picture" id="card-information">
+    <div class="popup popup_cards" id="card-information">
         <div class="popup__container">
             <button class="popup__button-close popup__button-close_pic" type="button">
                 <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
@@ -59,9 +59,9 @@
                 <button type="submit" class="form__save">Создать</button>
             </form>
         </div>
-    </article>
+    </div>
 
-    <article class="popup popup_opacity" id="picture-large">
+    <div class="popup popup_picture" id="picture-large">
         <div class="popup__enlarge">
           <button class="popup__button-close popup__button-close_enlarge" type="button">
             <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
@@ -69,10 +69,10 @@
           <img class="popup__item" alt="" src=""/>
           <h3 class="popup__name"></h3>
         </div>
-    </article>
+    </div>
 
     <template class="card-template">
-        <article class="card">
+        <div class="card">
             <a class="card__picture" href="#">
               <img data-name="" class="card__item card__image" alt="" src="">   
             </a>  
@@ -81,7 +81,7 @@
                 <h2 class="card__name"></h2>
                 <button class="card__like" type="button"></button>
             </div>    
-        </article>
+        </div>
     </template>
 
 
