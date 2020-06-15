@@ -10,15 +10,15 @@
     max-width: 75vw;
     max-height: 75vh;
     flex-direction: column;
-    position: relative;
+  
 }
 
-@media (max-width: 1070px) {
+/**@media (max-width: 1070px) {
     .popup__enlarge {
         width: fit-content;
         max-width: 500px;
     }
-}
+}**/
 
 @media (max-width: 610px) {
     .popup__enlarge {
