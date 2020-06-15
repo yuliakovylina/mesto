@@ -63,22 +63,17 @@ function addCard(name, link) {
   //присываиваем название
   const cardName = card.querySelector('.card__name');
   cardName.textContent = name;
-  cardName.alt = name;
   //присваиваем ссылку
   const cardLink = card.querySelector('.card__image');
   cardLink.src = link;
- 
+  cardLink.alt = name;
+  
   card.querySelector('.card__like').addEventListener('click', toggleLike);
   card.querySelector('.card__delete').addEventListener('click', cardRemove);
-  cardLink.addEventListener('click', bigPicturePopupOpenClose);
-  
-  function bigPicturePopupOpenClose() {
-    bigPicture.src = link;
-    bigPictureName.textContent = name;
-    bigPictureName.alt = name;
-    togglePopup(bigPicturePopup);
-  }
-    return card;
+  card.querySelector('.card__picture').addEventListener('click', bigPicturePopupOpenClose);
+  //cardLink.addEventListener('click', bigPicturePopupOpenClose);
+
+  return card;
 }
 
 //перебираем содержимое массива
@@ -108,13 +103,23 @@ function cardRemove(evt) {
 function formSubmitPictureAdd(evt) {
   evt.preventDefault();
   elementsContainer.prepend(addCard(placeInput.value, linkInput.value));
-  popupPictureAddRemove();
+  togglePopup(popupPicture);
+}
+
+//функция открытия большого попапа с картинкой
+function bigPicturePopupOpenClose (evt) {
+  const item = evt.target;
+  bigPicture.src = item.src;
+  bigPictureName.textContent = item.alt; 
+  console.log(name);
+  bigPictureName.alt = name; 
+  togglePopup(bigPicturePopup); 
 }
 
 //функция закрытия большого попапа
-function bigPopupClose() {
-  bigPicturePopup.classList.toggle('popup_opened');
-}
+//function bigPopupClose() {
+  //bigPicturePopup.classList.toggle('popup_opened');
+//}
 
 function togglePopup(elem) {
   elem.classList.toggle('popup_opened');
@@ -130,18 +135,18 @@ function formSubmitHandler(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  popupProfileOpened()
+  togglePopup(popupProfile);
   //нажимаем на "сохранить", данные из формы сохраняются в заголовки, попап закрывается
 }
 
 //вешаем слушатель на кнопки и другие элементы открытия/закрытия
 buttonEditProfile.addEventListener('click', popupProfileOpened);
-close.addEventListener('click', popupProfileOpened);
+close.addEventListener('click', () => togglePopup(popupProfile));
 formElement.addEventListener('submit', formSubmitHandler);                                                           
 mainButton.addEventListener('click', popupPictureAddRemove);    
-closePic.addEventListener('click', popupPictureAddRemove); 
+closePic.addEventListener('click', () => togglePopup(popupPicture)); 
 formElementPic.addEventListener('submit',formSubmitPictureAdd );                                        
-bigPictureCloseButton.addEventListener('click', bigPopupClose);
+bigPictureCloseButton.addEventListener('click', () => togglePopup(bigPicturePopup));
  
   
 
