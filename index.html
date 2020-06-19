@@ -38,11 +38,19 @@
             <button class="popup__button-close" type="button">
                 <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
             </button>
-            <form class="form" name="form" method="post" action="#">
+            
+            <form id="formname" class="form" name="form" method="post" action="#" novalidate>
                 <h2 class="form__heading">Редактировать профиль</h2>
-                    <input class="form__input form__input_name" type="text" name="firstname">
-                    <input class="form__input form__input_profession" type="text" name="profession">
-                <button type="submit" class="form__save">Сохранить</button>
+                    
+                <input class="form__input form__input_name" type="text" name="firstname" id="name-input"
+                    required minlength="2" maxlength="40">
+                <span id="name-input-error" class="form__input-error"></span>
+                    
+                <input class="form__input form__input_profession" type="text" name="profession" id="profession"
+                    required minlength="2" maxlength="200">
+                <span id="profession-error" class="form__input-error"></span>
+                
+                <button type="submit" class="form__save" disabled>Сохранить</button>
             </form>
         </div>
     </div>
@@ -52,11 +60,19 @@
             <button class="popup__button-close popup__button-close_pic" type="button">
                 <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
             </button>
+            
             <form class="form form_pic" name="form" method="post" action="#">
                 <h2 class="form__heading">Новое место</h2>
-                    <input class="form__input form__input_place" type="text" name="placename" placeholder="Название">
-                    <input class="form__input form__input_link" type="text" name="placelink" placeholder="Ссылка на картинку">
-                <button type="submit" class="form__save">Создать</button>
+                    
+                    <input class="form__input form__input_place" type="text" name="placename" placeholder="Название"  minlength="1" 
+                    maxlength="30" id="name-place" required>
+                    <span id="name-place-error" class="form__input-error"></span>
+                    
+                    <input class="form__input form__input_link" type="url" name="placelink" placeholder="Ссылка на картинку"
+                    id="link-place" required>
+                    <span id="link-place-error" class="form__input-error"></span>
+                
+                    <button type="submit" class="form__save" disabled>Создать</button>
             </form>
         </div>
     </div>
@@ -86,6 +102,7 @@
 
 
     <script src="./script/script.js"></script>
+    <script src="./script/validate.js"></script>
 
 </body>
 </html>

@@ -23,7 +23,7 @@ const mainButton = document.querySelector(".profile__button");
 const closePic = document.querySelector(".popup__button-close_pic");
 //нашли контейнер, в который будем добавлять карточки 
 const elementsContainer = document.querySelector(".elements");
-//нашли темплейт, в котором будем работать
+//нашли темплейт, в котором будем работать  
 const cardTemplate = document.querySelector('.card-template').content;
 const bigPicturePopup = document.getElementById('picture-large');
 const bigPicture = document.querySelector('.popup__item');
@@ -60,7 +60,7 @@ const initialCards = [
 function addCard(name, link) {
   //клонируем темплейт, в котором будем работать
   const card = cardTemplate.cloneNode(true);
-  //присываиваем название
+  //присваиваем название
   const cardName = card.querySelector('.card__name');
   cardName.textContent = name;
   //присваиваем ссылку
@@ -106,7 +106,7 @@ function formSubmitPictureAdd(evt) {
   togglePopup(popupPicture);
 }
 
-//функция открытия большого попапа с картинкой
+//функция открытия/закрытия большого попапа с картинкой
 function bigPicturePopupOpenClose (evt) {
   const item = evt.target;
   bigPicture.src = item.src;
@@ -116,15 +116,13 @@ function bigPicturePopupOpenClose (evt) {
   togglePopup(bigPicturePopup); 
 }
 
-//функция закрытия большого попапа
-//function bigPopupClose() {
-  //bigPicturePopup.classList.toggle('popup_opened');
-//}
-
+//открытие модального окна
 function togglePopup(elem) {
   elem.classList.toggle('popup_opened');
+  clickAndEscape(elem);
 }
 
+//открытие/закрытие попапа-редактирования профиля
 function popupProfileOpened() {
   nameInput.value = profileTitle.textContent; 
   jobInput.value = profileSubtitle.textContent;
@@ -137,6 +135,20 @@ function formSubmitHandler(evt) {
   profileSubtitle.textContent = jobInput.value;
   togglePopup(popupProfile);
   //нажимаем на "сохранить", данные из формы сохраняются в заголовки, попап закрывается
+}
+
+function clickAndEscape(elem) {
+  document.addEventListener('keydown', function (evt) {
+    if (evt.key === "Escape") {
+      elem.classList.remove('popup_opened');
+    }
+  }, {once: true}
+  );
+  elem.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      elem.classList.remove('popup_opened');
+    }
+  });
 }
 
 //вешаем слушатель на кнопки и другие элементы открытия/закрытия

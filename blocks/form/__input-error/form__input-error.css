@@ -1,0 +1,12 @@
+.form__input-error {
+    color: red;
+    height: 17px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+@media (max-width: 503px) {
+.form__input-error {
+    height: 27px;
+    }
+}
