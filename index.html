@@ -35,11 +35,11 @@
 
     <div class="popup popup_profile" id="information">
         <div class="popup__container">
-            <button class="popup__button-close" type="button">
+            <button class="popup__button-close popup__button-close_profile" type="button">
                 <img class="popup__close" src="./images/closeIcon.svg" alt="Закрыть" />
             </button>
             
-            <form id="formname" class="form" name="form" method="post" action="#" novalidate>
+            <form id="formname" class="form form_edit" name="form" method="post" action="#" novalidate>
                 <h2 class="form__heading">Редактировать профиль</h2>
                     
                 <input class="form__input form__input_name" type="text" name="firstname" id="name-input"
@@ -50,7 +50,7 @@
                     required minlength="2" maxlength="200">
                 <span id="profession-error" class="form__input-error"></span>
                 
-                <button type="submit" class="form__save" disabled>Сохранить</button>
+                <button type="submit" class="form__save">Сохранить</button>
             </form>
         </div>
     </div>
@@ -72,7 +72,7 @@
                     id="link-place" required>
                     <span id="link-place-error" class="form__input-error"></span>
                 
-                    <button type="submit" class="form__save" disabled>Создать</button>
+                    <button type="submit" class="form__save">Создать</button>
             </form>
         </div>
     </div>
@@ -100,8 +100,8 @@
         </div>
     </template>
 
-
-    <script src="./script/script.js"></script>
+    <script src="./script/index.js"></script>
+    <script src="./script/massive.js"></script>
     <script src="./script/validate.js"></script>
 
 </body>
