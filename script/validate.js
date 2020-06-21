@@ -43,13 +43,12 @@ function preventDefault(evt) {
 }
 
 function resetError(form) {
-    const errorSpan = Array.from(form.querySelectorAll('.form__input-error'));
+    const errorSpan = Array.from(form.querySelectorAll('.form__input_error'));
     const inputElement = Array.from(form.querySelectorAll('.form__input'));
     errorSpan.forEach(everySpan => {
         everySpan.textContent = '';
     })
     inputElement.forEach(everyInput => {
-        everyInput.classList.remove('form__input_inactive');
         everyInput.classList.remove('form__input-error_active');
 
     })
