@@ -29,6 +29,10 @@ const bigPicturePopup = document.getElementById('picture-large');
 const bigPicture = document.querySelector('.popup__item');
 const bigPictureName = document.querySelector('.popup__name');
 const bigPictureCloseButton = document.querySelector('.popup__button-close_enlarge');
+const errorPlace = document.getElementById("name-place-error"); //ошибки инпутов
+const errorUrl = document.getElementById("link-place-error");
+const errorName = document.getElementById("name-input-error");
+const errorProfession = document.getElementById("profession-error");
 const popups = Array.from(document.querySelectorAll(".popup"));
 
 
@@ -87,8 +91,15 @@ initialCards.forEach(function(item) {
 function openClosePictureHandler() {
   placeInput.value = "";
   linkInput.value = "";
-  
-  togglePopup(popupPicture); 
+  if (
+    errorPlace.classList.contains(formObject.errorClass) || 
+    errorUrl.classList.contains(formObject.errorClass)
+  ) {
+    eraser(elem);
+    togglePopup(popupPicture);
+  } else {
+    togglePopup(popupPicture);
+  }
 }
 
 //меняем свойство кнопки like
@@ -106,7 +117,7 @@ function removeCard(evt) {
 function formSubmitPictureAdd(evt) {
   evt.preventDefault();
   elementsContainer.prepend(addCard(placeInput.value, linkInput.value));
-  togglePopup(popupPicture);
+  closePopup(popupPicture);
 }
 
 //функция открытия/закрытия большого попапа с картинкой
@@ -130,17 +141,25 @@ function closePopup(){
 }
 
 //открытие/закрытие попапа-редактирования профиля
-function openProfileForm() {
+function openProfileForm(elem) {
   nameInput.value = profileTitle.textContent; 
   jobInput.value = profileSubtitle.textContent;
-  togglePopup(popupProfile);
+  if ( errorName.classList.contains(formObject.errorClass) || 
+       errorProfession.classList.contains(formObject.errorClass)) {
+         eraser(elem);
+         togglePopup(popupProfile);
+
+       } else {
+         togglePopup(popupProfile);
+       }
+  //togglePopup(popupProfile);
 }
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  togglePopup(popupProfile);
+  closePopup(popupProfile);
   //нажимаем на "сохранить", данные из формы сохраняются в заголовки, попап закрывается
 }
 
@@ -155,6 +174,16 @@ function clickAndEscapeListeners(elem) {
     if (evt.target.classList.contains('popup_opened')) {
       elem.classList.remove('popup_opened');
     }
+  });
+}
+
+function eraser(elem) {
+  const form = elem.querySelector(formObject.formSelector);
+  const formInputs = Array.from(
+    form.querySelectorAll(formObject.inputSelector)
+  );
+  formInputs.forEach((formInput) => {
+    hideInputError(form, formInput, formObject);
   });
 }
 

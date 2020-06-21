@@ -1,4 +1,4 @@
-/**.form__save_inactive {
+.form__save_inactive {
     background-color: white;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -12,7 +12,4 @@
     background-color: white;
     color: black;
     cursor: default;
-}**/
-.form__save_inactive { 
-    background-color: #E5E5E5; 
 }
