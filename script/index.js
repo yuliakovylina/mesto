@@ -144,7 +144,7 @@ function closePopup(){
 function openProfileForm(elem) {
   nameInput.value = profileTitle.textContent; 
   jobInput.value = profileSubtitle.textContent;
-  if ( errorName.classList.contains(formObject.errorClass) || 
+  if (errorName.classList.contains(formObject.errorClass) || 
        errorProfession.classList.contains(formObject.errorClass)) {
          eraser(elem);
          togglePopup(popupProfile);
