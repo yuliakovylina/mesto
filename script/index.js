@@ -31,6 +31,7 @@ const bigPictureName = document.querySelector('.popup__name');
 const bigPictureCloseButton = document.querySelector('.popup__button-close_enlarge');
 const popups = Array.from(document.querySelectorAll(".popup"));
 
+
 const initialCards = [
   {
       name: 'Архыз',
@@ -86,7 +87,7 @@ initialCards.forEach(function(item) {
 function openClosePictureHandler() {
   placeInput.value = "";
   linkInput.value = "";
-  resetError(popupPicture);
+  
   togglePopup(popupPicture); 
 }
 
@@ -113,15 +114,19 @@ function bigPicturePopupOpenClose (evt) {
   const item = evt.target;
   bigPicture.src = item.src;
   bigPictureName.textContent = item.alt; 
-  bigPictureName.alt = name; 
-  
+  bigPictureName.alt = name;  
   togglePopup(bigPicturePopup); 
 }
 
 //открытие модального окна
-function togglePopup(popup) {
-  popup.classList.toggle('popup_opened');
-  clickAndEscapeListeners(popup);
+function togglePopup(elem) {
+  elem.classList.toggle('popup_opened');
+  clickAndEscapeListeners(elem);
+}
+
+//закрытие модального окна через кнопку-крестик
+function closePopup(){
+  document.querySelector('.popup_opened').classList.remove('popup_opened');
 }
 
 //открытие/закрытие попапа-редактирования профиля
@@ -135,7 +140,7 @@ function formSubmitHandler(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  toggle(popupProfile);
+  togglePopup(popupProfile);
   //нажимаем на "сохранить", данные из формы сохраняются в заголовки, попап закрывается
 }
 
@@ -152,12 +157,6 @@ function clickAndEscapeListeners(elem) {
     }
   });
 }
-
-function closePopup(){
-  document.querySelector('.popup_opened').classList.remove('popup_opened');
-}
-
-
 
 //вешаем слушатель на кнопки и другие элементы открытия/закрытия
 editProfileButton.addEventListener('click', openProfileForm);

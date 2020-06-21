@@ -7,6 +7,11 @@
     padding-bottom: 13px;
 }
 
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
 @media (max-width: 503px) {
     .form__input {
         font-size: 12px;
