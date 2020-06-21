@@ -1,7 +1,8 @@
+
 function enableValidation(options) {
     //находим формы
     const formElements = Array.from(document.querySelectorAll(options.formSelector));
-    //для каждой формы находим ее элементы
+    //для каждой формы находим:
     formElements.forEach(formElement => {
         //находим ее инпуты
         const inputElement = Array.from(formElement.querySelectorAll(options.inputSelector));
@@ -14,17 +15,15 @@ function enableValidation(options) {
         input.addEventListener('input', e => handleInput(e, options.inputErrorClass))
         })
     
-        formElement.addEventListener('submit', evt => {
-            //обработка сабмита
-            evt.preventDefault();
-        })
-        formElement.addEventListener('input', () => {
-            //обработка валидности формы (кнопка)
-            const isFormValid = formElement.checkValidity();
-            submitButton.disabled = !isFormValid;
-            submitButton.classList.toggle(options.inactiveButtonClass, !isFormValid);
-        })
-})
+        formElement.addEventListener('input', () => handleFormInput(formElement, submitButton));
+        formElement.addEventListener('submit', (evt) => preventDefault(evt));
+
+        });
+}
+
+function handleFormInput(formElement, submitButton) {
+    const hasErrors = !formElement.checkValidity();
+    submitButton.disabled = hasErrors;
 }
 
 function handleInput(evt, options) {
@@ -39,6 +38,22 @@ function handleInput(evt, options) {
     }
 }
 
+function preventDefault(evt) {
+    evt.preventDefault();
+}
+
+function resetError(form) {
+    const errorSpan = Array.from(form.querySelectorAll('.form__input-error'));
+    const inputElement = Array.from(form.querySelectorAll('.form__input'));
+    errorSpan.forEach(everySpan => {
+        everySpan.textContent = '';
+    })
+    inputElement.forEach(everyInput => {
+        everyInput.classList.remove('form__input_inactive');
+        everyInput.classList.remove('form__input-error_active');
+
+    })
+}
 enableValidation({
     formSelector: '.form',
     inputSelector: '.form__input',

@@ -2,6 +2,7 @@
 @import url('./__button-close/popup__button-close.css');
 @import url('./__close/popup__close.css');
 @import url('./_cards/popup_cards.css');
+@import url('./__button-close/_profile/popup__button-close_profile.css');
 @import url('./__button-close/_pic/popup__button-close_pic.css');
 @import url('./__button-close/_enlarge/popup__button-close_enlarge.css');
 @import url('./__enlarge/popup__enlarge.css');

@@ -6,6 +6,7 @@
 @import url(./__input/_profession/form__input_profession.css);
 @import url(./__input/_place/form__input_place.css);
 @import url(./__input/_link/form__input_link.css);
+@import url(./__input/_error/form__input_error.css);
 @import url(./_pic/form_pic.css);
 @import url(./__input-error/form__input-error.css);
 
