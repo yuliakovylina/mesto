@@ -1,4 +1,4 @@
-const formObject = {
+const formSelectors = {
     formSelector: ".form",
     inputSelector: ".form__input",
     submitButtonSelector: ".form__save",
@@ -7,26 +7,26 @@ const formObject = {
     errorClass: "form__input-error_active",
 };
   
-const hideInputError = (formElement, inputElement, formObject) => {
+const hideInputError = (formElement, inputElement, formSelectors) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(formObject.inputErrorClass);
-    errorElement.classList.remove(formObject.errorClass);
+    inputElement.classList.remove(formSelectors.inputErrorClass);
+    errorElement.classList.remove(formSelectors.errorClass);
     errorElement.textContent = "";
 };
   
-const showInputError = (formElement, inputElement, errorMessage, formObject) => {
+const showInputError = (formElement, inputElement, errorMessage, formSelectors) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   
-    inputElement.classList.add(formObject.inputErrorClass);
+    inputElement.classList.add(formSelectors.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(formObject.errorClass);
+    errorElement.classList.add(formSelectors.errorClass);
 };
   
-const checkInputValidity = (formElement, inputElement, formObject) => {
+const checkInputValidity = (formElement, inputElement, formSelectors) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage, formObject);
+    showInputError(formElement, inputElement, inputElement.validationMessage, formSelectors);
     } else {
-      hideInputError(formElement, inputElement, formObject);
+      hideInputError(formElement, inputElement, formSelectors);
     }
 };
   
@@ -36,43 +36,43 @@ const hasInvalidInput = (inputList) => {
   });
 };
   
-const toggleButtonState = (inputList, buttonElement, formObject) => {
+const toggleButtonState = (inputList, buttonElement, formSelectors) => {
   // Если есть хотя бы один невалидный инпут
   if (hasInvalidInput(inputList)) {
     // сделай кнопку активной
-    buttonElement.classList.remove(formObject.inactiveButtonClass);
+    buttonElement.classList.remove(formSelectors.inactiveButtonClass);
     buttonElement.disabled = false;
   } else {
     // иначе сделай кнопку неактивной
-    buttonElement.classList.add(formObject.inactiveButtonClass);
+    buttonElement.classList.add(formSelectors.inactiveButtonClass);
     buttonElement.disabled = true;
   }
 };
   
-const setEventListeners = (formElement, formObject) => {
-  const inputList = Array.from(formElement.querySelectorAll(formObject.inputSelector));
-  const buttonElement = formElement.querySelector(formObject.submitButtonSelector);
+const setEventListeners = (formElement, formSelectors) => {
+  const inputList = Array.from(formElement.querySelectorAll(formSelectors.inputSelector));
+  const buttonElement = formElement.querySelector(formSelectors.submitButtonSelector);
   
-  toggleButtonState(inputList, buttonElement, formObject);
+  toggleButtonState(inputList, buttonElement, formSelectors);
   
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
-      checkInputValidity(formElement, inputElement, formObject);
-      toggleButtonState(inputList, buttonElement, formObject);
+      checkInputValidity(formElement, inputElement, formSelectors);
+      toggleButtonState(inputList, buttonElement, formSelectors);
     });
   });
 };
   
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll(formObject.formSelector));
+const enableValidation = (formSelectors) => {
+  const formList = Array.from(document.querySelectorAll(formSelectors.formSelector));
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-    setEventListeners(formElement, formObject);
+    setEventListeners(formElement, formSelectors);
   });
 };
 
-enableValidation(formObject);
+enableValidation(formSelectors);
   
 

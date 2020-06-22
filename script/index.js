@@ -35,7 +35,6 @@ const errorName = document.getElementById("name-input-error");
 const errorProfession = document.getElementById("profession-error");
 const popups = Array.from(document.querySelectorAll(".popup"));
 
-
 const initialCards = [
   {
       name: 'Архыз',
@@ -92,10 +91,10 @@ function openClosePictureHandler() {
   placeInput.value = "";
   linkInput.value = "";
   if (
-    errorPlace.classList.contains(formObject.errorClass) || 
-    errorUrl.classList.contains(formObject.errorClass)
+    errorPlace.classList.contains(formSelectors.errorClass) || 
+    errorUrl.classList.contains(formSelectors.errorClass)
   ) {
-    eraser(elem);
+    resetFormInputValues(elem);
     togglePopup(popupPicture);
   } else {
     togglePopup(popupPicture);
@@ -132,11 +131,12 @@ function bigPicturePopupOpenClose (evt) {
 //открытие модального окна
 function togglePopup(elem) {
   elem.classList.toggle('popup_opened');
-  clickAndEscapeListeners(elem);
+  setEscapeAndClickListener(elem);
 }
 
 //закрытие модального окна через кнопку-крестик
 function closePopup(){
+ // removeEscapeAndClickListener(elem);
   document.querySelector('.popup_opened').classList.remove('popup_opened');
 }
 
@@ -144,14 +144,14 @@ function closePopup(){
 function openProfileForm(elem) {
   nameInput.value = profileTitle.textContent; 
   jobInput.value = profileSubtitle.textContent;
-  if (errorName.classList.contains(formObject.errorClass) || 
-       errorProfession.classList.contains(formObject.errorClass)) {
-         eraser(elem);
-         togglePopup(popupProfile);
+  if (errorName.classList.contains(formSelectors.errorClass) || 
+      errorProfession.classList.contains(formSelectors.errorClass)) {
+        removeEscapeAndClickListener(elem);
+        closePopup(popupProfile);
 
-       } else {
-         togglePopup(popupProfile);
-       }
+      } else {
+        togglePopup(popupProfile);
+      }
   //togglePopup(popupProfile);
 }
 
@@ -163,27 +163,53 @@ function formSubmitHandler(evt) {
   //нажимаем на "сохранить", данные из формы сохраняются в заголовки, попап закрывается
 }
 
-function clickAndEscapeListeners(elem) {
-  document.addEventListener('keydown', function (evt) {
-    if (evt.key === "Escape") {
-      elem.classList.remove('popup_opened');
-    }
-  }, {once: true}
-  );
-  elem.addEventListener('click', (evt) => {
-    if (evt.target.classList.contains('popup_opened')) {
-      elem.classList.remove('popup_opened');
-    }
-  });
+//function clickAndEscapeListeners(elem) {
+  //document.addEventListener('keydown', function (evt) {
+    //if (evt.key === "Escape") {
+      //elem.classList.remove('popup_opened');
+    //}
+  //}, {once: true}
+  //);
+  //elem.addEventListener('click', (evt) => {
+    //if (evt.target.classList.contains('popup_opened')) {
+      //elem.classList.remove('popup_opened');
+    //}
+ // });
+//}
+
+function clickClose(evt) {
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);
+  }
 }
 
-function eraser(elem) {
-  const form = elem.querySelector(formObject.formSelector);
+function escClose(evt) {
+  if (evt.key ==="Escape") {
+    popups.forEach((popup) => {
+      if (popup.classList.contains('popup_opened')) {
+        closePopup(popup);
+      }
+    });
+  }
+}
+
+function setEscapeAndClickListener(elem) {
+  document.addEventListener("keydown", escClose);
+  elem.addEventListener("click", clickClose);
+}
+
+function removeEscapeAndClickListener(elem) {
+  document.removeEventListener("keydown", escClose);
+  elem.removeEventListener("click", clickClose);
+}
+
+function resetFormInputValues(elem) {
+  const form = elem.querySelector(formSelectors.formSelector);
   const formInputs = Array.from(
-    form.querySelectorAll(formObject.inputSelector)
+    form.querySelectorAll(formSelectors.inputSelector)
   );
   formInputs.forEach((formInput) => {
-    hideInputError(form, formInput, formObject);
+    hideInputError(form, formInput, formSelectors);
   });
 }
 
